@@ -1,9 +1,11 @@
-﻿define w = Character('[name]', color='#FF0000')
-define m = Character('[name]', color='#FF0000')
+﻿define w = Character('[name]', color='#fafafa')
+define m = Character('[name]', color='#fafafa')
 
 label  gender_choce():
+    
     menu:
         'Какого персонажа ты выберешь?'
+
         'Женщина':
             jump creat_woman
         'Мужчина':
@@ -16,4 +18,5 @@ label start:
         call woman_history()
     if m:
         call man_history()
+
     return

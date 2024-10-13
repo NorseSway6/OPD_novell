@@ -1121,12 +1121,13 @@ style help_button_text:
     properties gui.text_properties("help_button")
 
 style help_label:
-    xsize 375
+    xsize 275
     right_padding 30
 
 style help_label_text:
     size gui.text_size
-    xalign 1.0
+    xpos 18
+    xalign 0.0
     textalign 1.0
 
 
