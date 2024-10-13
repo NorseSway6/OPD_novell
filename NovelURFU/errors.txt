@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 5: expected ':' not found.
-    menu
-        ^
+File "game/script.rpy", line 13: expected statement.
+    woman_history()
+                   ^
+
+File "game/script.rpy", line 15: expected statement.
+    man_history()
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Oct 13 11:03:50 2024
+Sun Oct 13 14:22:49 2024

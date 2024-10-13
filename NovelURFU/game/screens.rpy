@@ -251,7 +251,7 @@ screen quick_menu():
 
             textbutton _("Назад") action Rollback()
             textbutton _("История") action ShowMenu('history')
-            textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
+            #textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Авто") action Preference("auto-forward", "toggle")
             textbutton _("Сохранить") action ShowMenu('save')
             textbutton _("Б.Сохр") action QuickSave()
@@ -563,7 +563,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
 
 
 style about_label is gui_label
@@ -745,12 +745,12 @@ screen preferences():
                         textbutton _("Оконный") action Preference("display", "window")
                         textbutton _("Полный") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "check"
-                    label _("Пропуск")
-                    textbutton _("Всего текста") action Preference("skip", "toggle")
-                    textbutton _("После выборов") action Preference("after choices", "toggle")
-                    textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
+                # vbox:
+                #     style_prefix "check"
+                #     label _("Пропуск")
+                #     textbutton _("Всего текста") action Preference("skip", "toggle")
+                #     textbutton _("После выборов") action Preference("after choices", "toggle")
+                #     textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
                 ## могут быть добавлены сюда для добавления новых настроек.
@@ -994,7 +994,7 @@ screen help():
                 textbutton _("Мышь") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
-                    textbutton _("Геймпад") action SetScreenVariable("device", "gamepad")
+                    textbutton _("Xbox") action SetScreenVariable("device", "gamepad")
 
             if device == "keyboard":
                 use keyboard_help
@@ -1058,53 +1058,53 @@ screen keyboard_help():
 screen mouse_help():
 
     hbox:
-        label _("Левый клик")
+        label _("ЛКМ")
         text _("Прохождение диалогов, активация интерфейса.")
 
     hbox:
-        label _("Клик колёсиком")
+        label _("СКМ")
         text _("Скрывает интерфейс пользователя.")
 
     hbox:
-        label _("Правый клик")
+        label _("ПКМ")
         text _("Вход в игровое меню.")
 
-    hbox:
-        label _("Колёсико вверх")
-        text _("Откат назад по сюжету игры.")
+    # hbox:
+    #     label _("Колёсико вверх")
+    #     text _("Откат назад по сюжету игры.")
 
-    hbox:
-        label _("Колёсико вниз")
-        text _("Откатывает предыдущее действие вперёд.")
+    # hbox:
+    #     label _("Колёсико вниз")
+    #     text _("Откатывает предыдущее действие вперёд.")
 
 
 screen gamepad_help():
 
     hbox:
-        label _("Правый триггер\nA/Нижняя кнопка")
+        label _("RT / A")
         text _("Прохождение диалогов, активация интерфейса.")
 
     hbox:
-        label _("Левый Триггер\nЛевый Бампер")
+        label _("LT / LB")
         text _("Откат назад по сюжету игры.")
 
     hbox:
-        label _("Правый бампер")
+        label _("RB")
         text _("Откатывает предыдущее действие вперёд.")
 
     hbox:
-        label _("Крестовина, Стики")
+        label _("D-pad / Sticks")
         text _("Навигация по интерфейсу.")
 
     hbox:
-        label _("Старт, Гид, B/Правая кнопка")
+        label _("B")
         text _("Вход в игровое меню.")
 
     hbox:
-        label _("Y/Верхняя кнопка")
+        label _("Y")
         text _("Скрывает интерфейс пользователя.")
 
-    textbutton _("Калибровка") action GamepadCalibrate()
+    #textbutton _("Калибровка") action GamepadCalibrate()
 
 
 style help_button is gui_button
@@ -1525,7 +1525,7 @@ screen quick_menu():
             yalign 1.0
 
             textbutton _("Назад") action Rollback()
-            textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
+            #textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Авто") action Preference("auto-forward", "toggle")
             textbutton _("Меню") action ShowMenu()
 
