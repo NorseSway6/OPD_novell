@@ -1,7 +1,11 @@
 ﻿define w = Character('[name]', color='#fafafa')
 define m = Character('[name]', color='#fafafa')
+$ skin_women_choice = ''
 
-label  gender_choce():
+init:
+    $ a = Position(xpos=0.1)
+
+label gender_choce:
     
     menu:
         'Какого персонажа ты выберешь?'
@@ -14,9 +18,13 @@ label  gender_choce():
 label start:
 
     call gender_choce
-    if w:
-        call woman_history()
-    if m:
-        call man_history()
 
+    if w:
+        call woman_history
+        return
+
+    if m:
+        call man_history
+        return
+    
     return

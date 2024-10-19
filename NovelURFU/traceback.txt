@@ -1,40 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "game/screens.rpy", line 1246, in <module>
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
-AttributeError: 'StoreModule' object has no attribute 'skip_frame_borders'
+While running game code:
+  File "game/script.rpy", line 3, in script
+    define w = Character('[name]', color='#fafafa', image=skin)
+  File "game/script.rpy", line 3, in <module>
+    define w = Character('[name]', color='#fafafa', image=skin)
+NameError: name 'skin' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 75, in run
-    renpy.translation.init_translation()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 702, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 796, in change_language
-    new_change_language(tl, language)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 748, in new_change_language
-    i.apply()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 2800, in apply
-    value = renpy.python.py_eval(expr)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
+  File "game/script.rpy", line 3, in script
+    define w = Character('[name]', color='#fafafa', image=skin)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 2235, in execute
+    self.set()
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 2249, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
   File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 1246, in <module>
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
-AttributeError: 'StoreModule' object has no attribute 'skip_frame_borders'
+  File "game/script.rpy", line 3, in <module>
+    define w = Character('[name]', color='#fafafa', image=skin)
+NameError: name 'skin' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Название новеллы 1.0
-Sun Oct 13 14:32:16 2024
+Sat Oct 19 13:03:03 2024

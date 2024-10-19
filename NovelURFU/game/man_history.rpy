@@ -1,7 +1,7 @@
 #label man_skin_choice():
 label creat_man():
     
-    $ alf = 'йцукенгшщзхъфывапролджэюбьтимсчяЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЮБЬТИМСЧЯ'
+    $ alf = 'йцукенгшщзхъфывапролджэюбьтимсчяЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЮБЬТИМСЧЯqwertyuiopasdfghjklmnbvcxzQWERTYUIOPLKJHGFDSAZXCVBNM'
     $ name = renpy.input('Введите имя пресонажа', length=15, allow=alf).strip()
     
     if name == '':
