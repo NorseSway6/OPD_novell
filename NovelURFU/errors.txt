@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/woman_history.rpy", line 10: expected 'simple_expression' not found.
-    xpos = 0.1
-         ^
+File "game/screens.rpy", line 350: 'menu' is not a keyword argument or valid child of the screen statement.
+    screen new_main menu():
+                        ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Oct 19 16:39:27 2024
+Wed Oct 23 23:38:45 2024
