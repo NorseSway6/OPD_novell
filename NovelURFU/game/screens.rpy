@@ -231,6 +231,86 @@ style choice_button_text is default:
     properties gui.text_properties("choice_button")
 
 
+screen choice_woman_character():
+    style_prefix "choice_character"
+
+    add 'images/sprites/woman1.png':
+        xpos 0.055
+        ypos 0.23
+    
+    add 'images/sprites/woman2.png':
+        xpos 0.265
+        ypos 0.23
+    
+    add 'images/sprites/woman3.png':
+        xpos 0.44
+        ypos 0.23
+    
+    add 'images/sprites/woman4.png':
+        xpos 0.62
+        ypos 0.23
+    
+    add 'images/sprites/woman5.png':
+        xpos 0.82
+        ypos 0.23
+
+    #добавить остальных
+    hbox:
+        textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman1.png'), Jump('woman_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman2.png'), Jump('woman_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman3.png'), Jump('woman_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman4.png'), Jump('woman_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman5.png'), Jump('woman_history')]
+
+
+screen choice_men_character():
+    style_prefix "choice_character"
+
+    add 'images/sprites/man1.png':
+        xpos 0.055
+        ypos 0.29
+    
+    add 'images/sprites/man2.png':
+        xpos 0.25
+        ypos 0.26
+    
+    add 'images/sprites/man3.png':
+        xpos 0.44
+        ypos 0.28
+    
+    add 'images/sprites/man4.png':
+        xpos 0.63
+        ypos 0.225
+    
+    add 'images/sprites/man5.png':
+        xpos 0.825
+        ypos 0.22
+
+    hbox:
+        textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man1.png'), Jump('man_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man2.png'), Jump('man_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man3.png'), Jump('man_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man4.png'), Jump('man_history')]
+        textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man5.png'), Jump('man_history')]
+
+
+style choice_character_hbox is hbox
+style choice_character_button is button
+style choice_character_button_text is button_text
+
+style choice_character_hbox:
+    xalign 0.5
+    ypos 900
+    yanchor 0.5
+    spacing 120
+
+style choice_character_button is default:
+    properties gui.button_properties("choice_character_button")
+
+style choice_character_button_text is default:
+    properties gui.text_properties("choice_character_button")
+
+
 ## Экран быстрого меню #########################################################
 ##
 ## Быстрое меню показывается внутри игры, чтобы обеспечить лёгкий доступ к
@@ -534,7 +614,6 @@ style return_button:
     yalign 1.0
     yoffset -45
 
-
 ## Экран Об игре ###############################################################
 ##
 ## Этот экран показывает авторскую информацию об игре и Ren'Py.
@@ -570,6 +649,10 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+    xpos 200
+
+style about_text:
+    xpos 200
 
 
 ## Экраны загрузки и сохранения ################################################
@@ -675,15 +758,15 @@ screen file_slots(title):
                     textbutton _(">") action FilePageNext()
                     key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Загрузить Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Скачать Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+                # if config.has_sync:
+                #     if CurrentScreenName() == "save":
+                #         textbutton _("Загрузить Sync"):
+                #             action UploadSync()
+                #             xalign 0.5
+                #     else:
+                #         textbutton _("Скачать Sync"):
+                #             action DownloadSync()
+                #             xalign 0.5
 
 
 style page_label is gui_label
@@ -769,8 +852,6 @@ screen preferences():
 
                     bar value Preference("auto-forward time")
 
-                vbox:
-
                     if config.has_music:
                         label _("Громкость музыки")
 
@@ -837,12 +918,14 @@ style pref_label:
 
 style pref_label_text:
     yalign 1.0
+    spacing 30
 
 style pref_vbox:
+    xpos 200
     xsize 338
 
 style radio_vbox:
-    spacing gui.pref_button_spacing
+    spacing 10
 
 style radio_button:
     properties gui.button_properties("radio_button")
@@ -874,6 +957,8 @@ style slider_button_text:
 
 style slider_vbox:
     xsize 675
+    xpos 200
+    ypos -40
 
 
 ## Экран истории ###############################################################
@@ -987,6 +1072,7 @@ screen help():
             spacing 23
 
             hbox:
+                spacing 30
 
                 textbutton _("Клавиатура") action SetScreenVariable("device", "keyboard")
                 textbutton _("Мышь") action SetScreenVariable("device", "mouse")
@@ -1113,19 +1199,18 @@ style help_text is gui_text
 
 style help_button:
     properties gui.button_properties("help_button")
-    xmargin 12
+    xpos 200
 
 style help_button_text:
     properties gui.text_properties("help_button")
 
 style help_label:
-    xsize 275
+    xsize 450
     right_padding 30
 
 style help_label_text:
     size gui.text_size
-    xpos 18
-    xalign 0.0
+    xpos 200
     textalign 1.0
 
 

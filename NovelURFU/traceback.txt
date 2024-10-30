@@ -1,34 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/woman_history.rpy", line 44, in script
-    show skin_woman:
-Exception: In DynamicImage '[skin_women_choice]': NameError("name 'skin_women_choice' is not defined")
+After initialization, but before game start.
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Style 'None' does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/woman_history.rpy", line 44, in script
-    show skin_woman:
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 1111, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 1074, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\exports\displayexports.py", line 503, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\display\scenelists.py", line 466, in add
-    thing.set_transform_event("show")
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\display\transform.py", line 823, in set_transform_event
-    self.child.set_transform_event(event)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\display\image.py", line 501, in set_transform_event
-    return self.target.set_transform_event(event)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\display\image.py", line 760, in set_transform_event
-    self.find_target()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\display\image.py", line 671, in find_target
-    raise Exception("In DynamicImage %r: %r" % (self.name, e))
-Exception: In DynamicImage '[skin_women_choice]': NameError("name 'skin_women_choice' is not defined")
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 75, in run
+    renpy.translation.init_translation()
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 702, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 801, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 803, in renpy.style.rebuild
+  File "style.pyx", line 796, in renpy.style.build_styles
+  File "style.pyx", line 686, in renpy.style.build_style
+  File "style.pyx", line 142, in renpy.style.get_full_style
+  File "style.pyx", line 83, in renpy.style.get_style
+Exception: Style 'None' does not exist.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Название новеллы 1.0
-Tue Oct 22 23:11:06 2024
+Wed Oct 30 16:06:16 2024

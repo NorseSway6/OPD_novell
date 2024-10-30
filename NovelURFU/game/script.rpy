@@ -4,9 +4,6 @@ $ skin_women_choice = ''
 $ skin_men_choice = ''
 $ gender = 0
 
-init:
-    $ a = Position(xpos=0.1)
-
 label gender_choce:
     
     menu:
@@ -28,11 +25,11 @@ label start:
     scene choice character
 
     if gender == 0:
-        call man_history
+        call screen choice_men_character
         return
 
     if gender == 1:
-        call woman_history
+        call screen choice_woman_character
         return
     
     return

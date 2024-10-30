@@ -44,7 +44,7 @@ define gui.hover_color = '#858585'
 define gui.selected_color = '#fafafa'
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = '#858585'
 
 ## Цвета, используемые для частей панелей, которые не заполняются. Они 003d51, 005b7a
 ## используются не напрямую, а только при воссоздании файлов изображений.
@@ -185,9 +185,11 @@ define gui.button_text_xalign = 0.0
 ##
 ## Эти настройки используются стандартным интерфейсом:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(30, 5, 30, 5)
+define gui.radio_button_width = 200
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(30, 5, 30, 5)
+define gui.check_button_width = 230
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -202,8 +204,13 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## именованные переменные. Например, вы можете раскомментировать следующую
 ## строчку, чтобы установить ширину кнопок навигации.
 
-# define gui.navigation_button_width = 250
-
+define gui.navigation_button_width = 500
+define gui.navigation_button_borders = Borders(150, 15, 150, 15)
+define gui.navigation_button_text_font = gui.text_font
+define gui.navigation_button_text_size = gui.text_size
+define gui.navigation_button_text_idle_color = '#fafafa'
+define gui.navigation_button_text_hover_color = "#858585"
+define gui.navigation_button_text_xalign = 0.5
 
 ## Кнопки Выбора ###############################################################
 ##
@@ -212,14 +219,28 @@ define gui.quick_button_text_selected_color = gui.accent_color
 define gui.choice_button_width = 700
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 12, 150, 12)
+define gui.choice_button_borders = Borders(150, 15, 150, 15)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#fafafa'
-define gui.choice_button_text_hover_color = "#fafafa"
-define gui.choice_button_text_insensitive_color = '#8888887f'
+define gui.choice_button_text_hover_color = "#858585"
+define gui.choice_button_text_insensitive_color = '#fafafa'
 
+# Кнопки выбора персонажей
+define gui.choice_character_button_width = 250
+define gui.choice_character_button_height = None
+define gui.choice_character_button_tile = False
+define gui.choice_character_button_borders = Borders(150, 15, 150, 15)
+define gui.choice_character_button_text_font = gui.text_font
+define gui.choice_character_button_text_size = gui.text_size
+define gui.choice_character_button_text_xalign = 0.5
+define gui.choice_character_button_text_idle_color = '#fafafa'
+define gui.choice_character_button_text_hover_color = "#858585"
+define gui.choice_character_button_text_insensitive_color = '#fafafa'
+
+# Кнопки help
+define gui.help_button_borders = Borders(70, 9, 70, 9)
 
 ## Кнопки Слотов ###############################################################
 ##
@@ -242,7 +263,7 @@ define config.thumbnail_width = 384
 define config.thumbnail_height = 216
 
 ## Количество колонок и рядов в таблице слотов.
-define gui.file_slot_cols = 3
+define gui.file_slot_cols = 2
 define gui.file_slot_rows = 2
 
 
