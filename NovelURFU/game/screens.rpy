@@ -236,25 +236,24 @@ screen choice_woman_character():
 
     add 'images/sprites/woman1.png':
         xpos 0.055
-        ypos 0.23
+        ypos 0.29
     
     add 'images/sprites/woman2.png':
         xpos 0.265
-        ypos 0.23
+        ypos 0.29
     
     add 'images/sprites/woman3.png':
         xpos 0.44
-        ypos 0.23
+        ypos 0.29
     
     add 'images/sprites/woman4.png':
         xpos 0.62
-        ypos 0.23
+        ypos 0.29
     
     add 'images/sprites/woman5.png':
         xpos 0.82
-        ypos 0.23
+        ypos 0.29
 
-    #добавить остальных
     hbox:
         textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman1.png'), Jump('woman_history')]
         textbutton 'Выбрать' action [SetVariable('skin_women_choice', 'images/sprites/woman2.png'), Jump('woman_history')]
@@ -268,23 +267,23 @@ screen choice_men_character():
 
     add 'images/sprites/man1.png':
         xpos 0.055
-        ypos 0.29
+        ypos 0.34
     
     add 'images/sprites/man2.png':
         xpos 0.25
-        ypos 0.26
+        ypos 0.31
     
     add 'images/sprites/man3.png':
         xpos 0.44
-        ypos 0.28
+        ypos 0.33
     
     add 'images/sprites/man4.png':
         xpos 0.63
-        ypos 0.225
+        ypos 0.275
     
     add 'images/sprites/man5.png':
         xpos 0.825
-        ypos 0.22
+        ypos 0.27
 
     hbox:
         textbutton 'Выбрать' action [SetVariable('skin_men_choice', 'images/sprites/man1.png'), Jump('man_history')]
@@ -300,7 +299,7 @@ style choice_character_button_text is button_text
 
 style choice_character_hbox:
     xalign 0.5
-    ypos 900
+    ypos 970
     yanchor 0.5
     spacing 120
 
@@ -1453,6 +1452,8 @@ style nvl_window:
 
     background "gui/nvl.png"
     padding gui.nvl_borders.padding
+    xpos 307
+    ypos 173
 
 style nvl_entry:
     xfill True

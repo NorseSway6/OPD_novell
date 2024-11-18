@@ -1,8 +1,19 @@
-﻿define w = Character('[name]', color='#fafafa')
-define m = Character('[name]', color='#fafafa')
+﻿define m = Character('[name]', color='#fafafa')
+# define w = Character('[name]', color='#fafafa')
+define n = Character(None, kind=nvl)
+define h = Character('Herceg', color='#fafafa')
+define memory1 = False
+define memory2 = False
 $ skin_women_choice = ''
 $ skin_men_choice = ''
 $ gender = 0
+
+### Запихать мужской и женский скин просто в скин, в скринах тупо в две функции объеденить в одну. Либо в выборах персонажей через иф чекая гендер. 
+### Поиграться с окончаниями, что бы для женищины не делать отдельную историю.
+
+init:
+    $ main_character = Position(xalign = 0.2, yalign = 0.8)
+    $ secondary_character = Position(xalign = 0.85, yalign = 0.8)
 
 label gender_choce:
     
@@ -19,10 +30,9 @@ label gender_choce:
 label start:
 
     scene choice character
+    with fade
 
     call gender_choce
-
-    scene choice character
 
     if gender == 0:
         call screen choice_men_character

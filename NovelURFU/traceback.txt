@@ -1,41 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
-    __update()
-  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-Exception: Style 'None' does not exist.
+While running game code:
+  File "game/woman_history.rpy", line 11, in script
+    if skin == '':
+  File "game/woman_history.rpy", line 11, in <module>
+    if skin == '':
+NameError: name 'skin' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\main.py", line 75, in run
-    renpy.translation.init_translation()
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 702, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 801, in change_language
-    i()
-  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
-    __update()
-  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
-    renpy.style.rebuild()
-  File "style.pyx", line 803, in renpy.style.rebuild
-  File "style.pyx", line 796, in renpy.style.build_styles
-  File "style.pyx", line 686, in renpy.style.build_style
-  File "style.pyx", line 142, in renpy.style.get_full_style
-  File "style.pyx", line 83, in renpy.style.get_style
-Exception: Style 'None' does not exist.
+  File "game/woman_history.rpy", line 11, in script
+    if skin == '':
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 1843, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/woman_history.rpy", line 11, in <module>
+    if skin == '':
+NameError: name 'skin' is not defined
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Название новеллы 1.0
-Wed Oct 30 16:06:16 2024
+Mon Nov 18 18:31:17 2024

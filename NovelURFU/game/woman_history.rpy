@@ -10,10 +10,9 @@ label creat_woman:
 label woman_history:
 
     image skin_woman = '[skin_women_choice]'
-    show skin_woman:
-        xpos 0.2
-        ypos 0.3
+    show skin_woman at main_character
+    with dissolve
 
-    w "Привет"
+    m "Привет, реализация данного выбора в процессе. Выберете игру за мужского персонажа"
 
     return
