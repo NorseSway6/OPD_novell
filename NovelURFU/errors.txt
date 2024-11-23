@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1456: expected 'simple_expression' not found.
-    ypos 
-         ^
+File "game/man_history.rpy", line 185: choice menuitem expects a non-empty block.
+    "Консультация по кибербезопасности":
+                                        ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 18 19:30:20 2024
+Sat Nov 23 21:13:00 2024

@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/woman_history.rpy", line 11, in script
-    if skin == '':
-  File "game/woman_history.rpy", line 11, in <module>
-    if skin == '':
-NameError: name 'skin' is not defined
+  File "game/man_history.rpy", line 168, in script call
+    call seven
+  File "game/character_choices.rpy", line 264, in script
+    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
+  File "game/character_choices.rpy", line 264, in <module>
+    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
+AttributeError: 'NoneType' object has no attribute 'remove'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/woman_history.rpy", line 11, in script
-    if skin == '':
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 1843, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/woman_history.rpy", line 11, in <module>
-    if skin == '':
-NameError: name 'skin' is not defined
+  File "game/man_history.rpy", line 168, in script call
+    call seven
+  File "game/character_choices.rpy", line 264, in script
+    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/character_choices.rpy", line 264, in <module>
+    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
+AttributeError: 'NoneType' object has no attribute 'remove'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Название новеллы 1.0
-Mon Nov 18 18:31:17 2024
+Sat Nov 23 21:59:12 2024
