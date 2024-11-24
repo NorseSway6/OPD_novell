@@ -1,30 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/man_history.rpy", line 168, in script call
-    call seven
-  File "game/character_choices.rpy", line 264, in script
-    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
-  File "game/character_choices.rpy", line 264, in <module>
-    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
-AttributeError: 'NoneType' object has no attribute 'remove'
+  File "game/history.rpy", line 15, in script
+    n "Однажды, когда [name] [Morpher('сидел', gender)] за компьютером и [Morpher('играла', gender)] в свою любимую игру Town Simulator, [Morpher('он', gender)] [Morpher('заметил', gender)], что игра стала более реалистичной. [Morpher('он', gender)] [Morpher('решил', gender)], что это из-за новых обновлений, и [Morpher('продолжил', gender)] играть. Но вскоре [name] [Morpher('понял', gender)], что происходит нечто необычное."
+TypeError: Morpher() takes 1 positional argument but 2 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/man_history.rpy", line 168, in script call
-    call seven
-  File "game/character_choices.rpy", line 264, in script
-    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/character_choices.rpy", line 264, in <module>
-    $ variants.remove(1).remove(2).remove(3).remove(4).remove(5).remove(6).remove(7)
-AttributeError: 'NoneType' object has no attribute 'remove'
+  File "game/history.rpy", line 15, in script
+    n "Однажды, когда [name] [Morpher('сидел', gender)] за компьютером и [Morpher('играла', gender)] в свою любимую игру Town Simulator, [Morpher('он', gender)] [Morpher('заметил', gender)], что игра стала более реалистичной. [Morpher('он', gender)] [Morpher('решил', gender)], что это из-за новых обновлений, и [Morpher('продолжил', gender)] играть. Но вскоре [name] [Morpher('понял', gender)], что происходит нечто необычное."
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 2573, in execute
+    Say.execute(self)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\character.py", line 1440, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\character.py", line 1354, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\character.py", line 1334, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Пользователь\Desktop\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+TypeError: Morpher() takes 1 positional argument but 2 were given
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.2.24090902
 Название новеллы 1.0
-Sat Nov 23 21:59:12 2024
+Sun Nov 24 13:07:44 2024

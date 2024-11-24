@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/man_history.rpy", line 185: choice menuitem expects a non-empty block.
-    "Консультация по кибербезопасности":
-                                        ^
+File "game/script.rpy", line 54: end of line expected.
+    jump screen choice_character
+                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Nov 23 21:13:00 2024
+Sun Nov 24 12:40:00 2024

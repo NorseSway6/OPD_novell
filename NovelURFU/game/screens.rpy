@@ -255,11 +255,11 @@ screen choice_character():
             ypos 0.27
 
         hbox:
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man1.png'), Jump('man_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man2.png'), Jump('man_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man3.png'), Jump('man_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man4.png'), Jump('man_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man5.png'), Jump('man_history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man1.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man2.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man3.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man4.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/man5.png'), Jump('history')]
     
     if gender == 1:
         add 'images/sprites/woman1.png':
@@ -283,11 +283,11 @@ screen choice_character():
             ypos 0.29
 
         hbox:
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman1.png'), Jump('woman_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman2.png'), Jump('woman_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman3.png'), Jump('woman_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman4.png'), Jump('woman_history')]
-            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman5.png'), Jump('woman_history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman1.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman2.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman3.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman4.png'), Jump('history')]
+            textbutton 'Выбрать' action [SetVariable('skin', 'images/sprites/woman5.png'), Jump('history')]
 
 
 
