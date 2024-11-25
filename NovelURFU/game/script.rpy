@@ -16,40 +16,30 @@ $ gender = 0
 
 
 ### Сделать "аватар" к репликам
-### Поиграться с окончаниями, что бы для женищины не делать отдельную историю. Можно с помощью бибилиотеки
 ### Решить что то со склонением имен
-### Сделать hide winodw ии подобная хрень
+### Поменять размер гг и сделать спрайт команды
 
 init python:
-    ### Эта функция изменяет слово в зависимости от выбранного игроком рода .....пошел
+    ### Эта функция изменяет слово в зависимости от выбранного игроком рода
     def Morpher(word): 
         pronouns = {'он':'она','его':'ее', 'ним':'ней', 'ему':'ей', 'нему':'ней', 'него':'нее'}
         if gender==0:
             return word
 
         if word in pronouns.keys():
-                    return pronouns.get(word)
+            return pronouns.get(word)
         if word[-2:]=='ся':
             return word[:-2] + 'ась'
+        if 'шел' in word:
+            return word[:-2] + 'ла'
         if 'мог' in word:
             return word + 'ла'
         return word + 'а'
 
 init:
-    $ main_character = Position(xalign = 0.2, yalign = 0.8)
-    $ secondary_character = Position(xalign = 0.85, yalign = 0.8)
-
-label gender_choice:
-    
-    menu:
-        'Какого персонажа ты выберешь?'
-
-        'Женщина':
-            $ gender = 1
-            jump creat_character
-        'Мужчина':
-            $ gender = 0
-            jump creat_character
+    $ main_character = Position(xalign = 0.2)
+    $ secondary_character = Position(xalign = 0.85)
+    $ center = Position(xalign = 0.5)
 
 label start:
 
@@ -57,7 +47,15 @@ label start:
     scene choice character
     with fade
 
-    call gender_choice
+    menu:
+        'Какого персонажа ты выберешь?'
+
+        'Женщина':
+            $ gender = 1
+            call creat_character
+        'Мужчина':
+            $ gender = 0
+            call creat_character
     
     call screen choice_character
     
