@@ -14,11 +14,8 @@ define memory2 = False
 $ skin = ''
 $ gender = 0
 
-### Решить что то со склонением имен
-### Поменять размер гг и сделать спрайт команды
-
 init python:
-    ### Эта функция изменяет слово в зависимости от выбранного игроком рода
+    ### Эта функция изменяет слово/окончание слова в зависимости от выбранного игроком пола
     def Morpher(word): 
         pronouns = {'он':'она','его':'ее', 'ним':'ней', 'ему':'ей', 'нему':'ней', 'него':'нее'}
         if gender==0:
@@ -38,6 +35,25 @@ init:
     $ main_character = Position(xalign = 0.2)
     $ secondary_character = Position(xalign = 0.85)
     $ center = Position(xalign = 0.5)
+
+transform come_skin:
+    xpos 200 ypos 180
+    linear 0.4 xpos 200 ypos 160
+    linear 0.4 xpos 220 ypos 180
+    linear 0.4 xpos 240 ypos 160
+    linear 0.4 xpos 260 ypos 180
+    linear 0.4 xpos 280 ypos 160
+    linear 0.4 xpos 300 ypos 180
+
+transform come_team:
+    xpos 840 ypos 180
+    linear 0.4 xpos 840 ypos 160
+    linear 0.4 xpos 820 ypos 180
+    linear 0.4 xpos 800 ypos 160
+    linear 0.4 xpos 780 ypos 180
+    linear 0.4 xpos 760 ypos 160
+    linear 0.4 xpos 740 ypos 180
+
 
 label start:
 

@@ -80,7 +80,7 @@ define gui.interface_text_size = 33
 define gui.label_text_size = 36
 
 ## Размер текста на экране уведомлений.
-define gui.notify_text_size = 24
+define gui.notify_text_size = 33
 
 ## Размер заголовка игры.
 define gui.title_text_size = 75
@@ -319,7 +319,7 @@ define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 
 ## Рамки, используемые в частях экрана уведомлений.
-define gui.notify_frame_borders = Borders(24, 8, 60, 8)
+define gui.notify_frame_borders = Borders(35, 10, 60, 10)
 
 ## Должны ли фоны рамок моститься?
 define gui.frame_tile = False

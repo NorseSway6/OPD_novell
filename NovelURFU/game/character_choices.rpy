@@ -64,7 +64,7 @@ label two_1_2:
     n "[name] долго [Morpher('гулял')] по городу, дойдя до набережной. Там к [Morpher('нему')] подходит тот неизвестный, который [Morpher('ему')] писал."
     show dima at secondary_character
     d "[name]! Вот ты где. Я уж думал, что не найду тебя благо прохожие подсказали, куда ты [Morpher('пошел')]. Почему ты не [Morpher('пошел')] на площадь к памятнику в 13 часов?"
-    show skin at main_character
+    show skin at come_skin
     m "Разве мне кто-то об этом говорил?"
     d "Ты [Morpher('читал')] мой стих?"
     m "А, дак это ты отправил мне тот стих? И причем тут он?"
@@ -90,7 +90,7 @@ label two_3:
     n "Когда [name] [Morpher('пришел')] на площадь, Дмитрий уже ждал [Morpher('его')] там."
     show dima at secondary_character
     d "Меня зовут Дмитрий, я слышал, что ты пытаешься спасти город от хакера Herceg. Я могу помочь тебе."
-    show skin at main_character
+    show skin at come_skin
     m "Это было бы здорово. Мне действительно нужна помощь."
     m "А зачем вообще нужно было зашифровывать сообщения? Что если бы я не [Morpher('понял')] что в нем что-то зашифровано?"
     d "Я знал, что ты не [Morpher('глуп')] и поймешь мое сообщение."
@@ -203,9 +203,15 @@ label five_1:
 
     menu:
         "Ликвидировать":
-            call six_1
+            window hide
+            show liquidation
+            $ renpy.notify("Вы ликвидировали Herseg")
+            pause
         "Посадить Herceg в тюрьму":
-            call six_2
+            window hide
+            scene jail with fade
+            $ renpy.notify("Вы посадили Herseg в тюрьму")
+            pause
 
     return
 
@@ -213,7 +219,7 @@ label five_2:
 
     scene storage
     n "Между [name] и Herceg завязывается диалог"
-    show skin at main_character
+    show skin at come_skin
     m "Herceg, я знаю, что ты здесь. Я пришёл, чтобы остановить тебя."
     show herceg at secondary_character
     h "Ты не сможешь меня остановить. У меня в руке красная кнопка, которая может стереть город с лица Земли."
@@ -242,29 +248,20 @@ label five_2:
     n "После этого группа особого назначения схватила Herceg и все начали думать, что с ним делать."
     menu:
         "Ликвидировать":
-            call six_1
+            window hide
+            show liquidation
+            $ renpy.notify("Вы ликвидировали Herseg")
+            pause
         "Посадить Herceg в тюрьму":
-            call six_2
+            window hide
+            scene jail with fade
+            $ renpy.notify("Вы посадили Herseg в тюрьму")
+            pause
         "Позволить начать жизнь Herceg с чистого листа":
+            $ renpy.notify("Вы дали Herseg второй шанс")
             "Мы не можем его просто так отпустить, мы поняли, что он изменился, но толпа не простит его. Команда antiHerceg меняет Herceg. Тимлид руководит процессом. Дизайнер изменяет его внешность. Геймдизайнер придумывает его прошлое. Аналитик просчитывает дальнейшее его развитие. Разработчик создает ему новые умения и удаляет умение хакера. Тестировщик проверяет всю его работоспособность."
     
     return
-
-
-
-label six_1:
-
-    n "1)	Сцена ликвидации Herceg"
-
-    return
-
-label six_2:
-
-    n "2)	Сцена посадки Herceg в тюрьму"
-
-    return
-
-
 
 label seven:
     menu:
