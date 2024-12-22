@@ -33,7 +33,7 @@ init python:
 
 init:
     $ main_character = Position(xalign = 0.2)
-    $ secondary_character = Position(xalign = 0.85)
+    $ secondary_character = Position(xalign = 0.80)
     $ center = Position(xalign = 0.5)
 
 transform come_skin:
@@ -53,6 +53,15 @@ transform come_team:
     linear 0.4 xpos 780 ypos 180
     linear 0.4 xpos 760 ypos 160
     linear 0.4 xpos 740 ypos 180
+
+transform come_character:
+    xpos 1270 ypos 180
+    linear 0.4 xpos 1270 ypos 160
+    linear 0.4 xpos 1250 ypos 180
+    linear 0.4 xpos 1230 ypos 160
+    linear 0.4 xpos 1210 ypos 180
+    linear 0.4 xpos 1190 ypos 160
+    linear 0.4 xpos 1170 ypos 180
 
 
 label start:
