@@ -219,7 +219,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
+    ypos 470
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -386,20 +386,20 @@ screen navigation():
 
         textbutton _("Настройки") action ShowMenu("preferences")
 
+        #textbutton _("Об игре") action ShowMenu("about")
+
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Помощь не необходима и не относится к мобильным устройствам.
+            textbutton _("Помощь") action ShowMenu("help")
+
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("Главное меню") action MainMenu()
-
-        textbutton _("Об игре") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Помощь") action ShowMenu("help")
+            textbutton _("Главное меню") action MainMenu()    
 
         if renpy.variant("pc"):
 
@@ -855,25 +855,25 @@ screen preferences():
                         hbox:
                             bar value Preference("music volume")
 
-                    if config.has_sound:
+                    # if config.has_sound:
 
-                        label _("Громкость звуков")
+                    #     label _("Громкость звуков")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                    #     hbox:
+                    #         bar value Preference("sound volume")
 
-                            if config.sample_sound:
-                                textbutton _("Тест") action Play("sound", config.sample_sound)
+                    #         if config.sample_sound:
+                    #             textbutton _("Тест") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Громкость голоса")
+                    # if config.has_voice:
+                    #     label _("Громкость голоса")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                    #     hbox:
+                    #         bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Тест") action Play("voice", config.sample_voice)
+                    #         if config.sample_voice:
+                    #             textbutton _("Тест") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing

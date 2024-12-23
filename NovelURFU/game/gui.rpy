@@ -83,7 +83,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 33
 
 ## Размер заголовка игры.
-define gui.title_text_size = 75
+define gui.title_text_size = 100
 
 
 ## Главное и игровое меню. #####################################################
@@ -204,7 +204,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## именованные переменные. Например, вы можете раскомментировать следующую
 ## строчку, чтобы установить ширину кнопок навигации.
 
-define gui.navigation_button_width = 500
+define gui.navigation_button_width = 550
 define gui.navigation_button_borders = Borders(150, 15, 150, 15)
 define gui.navigation_button_text_font = gui.text_font
 define gui.navigation_button_text_size = gui.text_size

@@ -2,6 +2,7 @@
 define n = Character(None, kind=nvl)
 define h = Character('Herceg', color='#fafafa')
 define d = Character('Дмитрий', color='#fafafa')
+define da = Character('Данил', color='#fafafa')
 define k = Character('King', color='#fafafa')
 define di = Character('Диана', color='#fafafa')
 define ki = Character('Кирилл', color='#fafafa')
@@ -66,18 +67,18 @@ transform come_character:
 
 label start:
 
-    $ variants = [1, 2, 3, 4, 5, 6, 7]
+    $ variants = [1, 2, 3, 4, 5, 6, 7, 8]
     scene choice character
     with fade
 
     menu:
         'Какого персонажа ты выберешь?'
 
-        'Женщина':
-            $ gender = 1
-            call creat_character
         'Мужчина':
             $ gender = 0
+            call creat_character
+        'Женщина':
+            $ gender = 1
             call creat_character
     
     call screen choice_character
