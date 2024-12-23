@@ -26,6 +26,8 @@ init python:
             return pronouns.get(word)
         if word[-2:]=='ся':
             return word[:-2] + 'ась'
+        if word[-2:]=='ен':
+            return word[:-2] + 'на'
         if 'шел' in word:
             return word[:-2] + 'ла'
         if 'мог' in word:
